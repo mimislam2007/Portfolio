@@ -8,54 +8,33 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>My Portfolio</h1>
+        <header class="profile-header">
+            <div class="banner"></div>
+            <div class="profile-info">
+                <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+                <h1 class="name">John Doe</h1>
+                <p class="username">@johndoe</p>
+                <p class="bio">This is a sample bio. Passionate about technology and design.</p>
+            </div>
         </header>
-        <nav>
+        <nav class="nav">
             <ul>
-                <li><a href="#about" class="active" data-tab="about">About Me</a></li>
-                <li><a href="#projects" data-tab="projects">Projects</a></li>
-                <li><a href="#resume" data-tab="resume">Resume</a></li>
-                <li><a href="#contacts" data-tab="contacts">Contacts</a></li>
+                <li><a href="#">Tweets</a></li>
+                <li><a href="#">Tweets & Replies</a></li>
+                <li><a href="#">Media</a></li>
+                <li><a href="#">Likes</a></li>
             </ul>
         </nav>
-        <div class="content">
-            <section id="about" class="tab-content active">
-                <h2>About Me</h2>
-                <p>Write a brief description about yourself here.</p>
-            </section>
-            <section id="projects" class="tab-content">
-                <h2>Projects</h2>
-                <p>List your projects here, with links if applicable.</p>
-            </section>
-            <section id="resume" class="tab-content">
-                <h2>Resume</h2>
-                <p>Link to your resume here or provide a brief summary of your experience.</p>
-            </section>
-            <section id="contacts" class="tab-content">
-                <h2>Contacts</h2>
-                <p>Provide your contact information here.</p>
-            </section>
+        <div class="tweets">
+            <div class="tweet">
+                <p><strong>John Doe</strong> <span>@johndoe</span> - 1h ago</p>
+                <p>This is a sample tweet! #example</p>
+            </div>
+            <div class="tweet">
+                <p><strong>John Doe</strong> <span>@johndoe</span> - 2h ago</p>
+                <p>Another tweet, just sharing some thoughts.</p>
+            </div>
         </div>
     </div>
-    <script>
-        const tabs = document.querySelectorAll('nav a');
-        const tabContents = document.querySelectorAll('.tab-content');
-
-        tabs.forEach(tab => {
-            tab.addEventListener('click', function(event) {
-                event.preventDefault();
-
-                // Remove active class from all tabs and contents
-                tabs.forEach(t => t.classList.remove('active'));
-                tabContents.forEach(content => content.classList.remove('active'));
-
-                // Add active class to the clicked tab and corresponding content
-                this.classList.add('active');
-                const tabId = this.getAttribute('data-tab');
-                document.getElementById(tabId).classList.add('active');
-            });
-        });
-    </script>
 </body>
 </html>
