@@ -1,55 +1,64 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Mim Islam Portfolio</title>
-  </head>
-  <body>
-    <h1>Portfolio</h1>
-    <p>Development and Project Managment</p>
-    <img src= "myface.jpeg">
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
     <div class="container">
         <header>
-            <h1>Welcome to My Portfolio!</h1>
+            <h1>Welcome to My Portfolio</h1>
         </header>
         <nav>
             <ul>
-                <li><a href="#picture" class="active">My Picture</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#contacts">Contacts</a></li>
+                <li><a href="#picture" class="active" data-tab="picture">My Picture</a></li>
+                <li><a href="#about" data-tab="about">About Me</a></li>
+                <li><a href="#projects" data-tab="projects">Projects</a></li>
+                <li><a href="#resume" data-tab="resume">Resume</a></li>
+                <li><a href="#contacts" data-tab="contacts">Contacts</a></li>
             </ul>
         </nav>
         <div class="content">
-            <section id="picture">
+            <section id="picture" class="tab-content active">
                 <h2>My Picture</h2>
                 <img src="your-picture.jpg" alt="Your Face">
             </section>
-            <section id="about">
+            <section id="about" class="tab-content">
                 <h2>About Me</h2>
                 <p>Write a brief description about yourself here.</p>
             </section>
-            <section id="projects">
+            <section id="projects" class="tab-content">
                 <h2>Projects</h2>
                 <p>List your projects here.</p>
             </section>
-            <section id="resume">
+            <section id="resume" class="tab-content">
                 <h2>Resume</h2>
                 <p>Link to your resume here.</p>
             </section>
-            <section id="contacts">
+            <section id="contacts" class="tab-content">
                 <h2>Contacts</h2>
                 <p>Provide your contact information here.</p>
             </section>
         </div>
     </div>
     <script>
-        const links = document.querySelectorAll('nav a');
-        links.forEach(link => {
-            link.addEventListener('click', function() {
-                links.forEach(l => l.classList.remove('active'));
+        const tabs = document.querySelectorAll('nav a');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                // Remove active class from all tabs and contents
+                tabs.forEach(t => t.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                // Add active class to the clicked tab and corresponding content
                 this.classList.add('active');
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
             });
         });
     </script>
