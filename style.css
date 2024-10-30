@@ -1,6 +1,7 @@
 html,body{
 	height: 99%;
 	width: 99%;
+	background-color: #171614;
 }
 *{
 	box-sizing: border-box;
