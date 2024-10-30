@@ -10,11 +10,11 @@ html,body{
 	background-color: #754043 ;
 	margin: 15px;
 	padding: 10px;
-	border: 3px solid lightpink;
-	box-shadow: 1px 3px 30px 1px pink;
-	outline: 10px 10px lavender groove;
+	border: 3px solid #37423D;
+	box-shadow: 1px 3px 30px 1px #563635;
+	outline: 10px 10px #563635;
 	text-transform: capitalize;
-	text-shadow: 1px 1px lavender ;
+	text-shadow: 1px 1px #563635 ;
 	font-family: fantasy;
 	height: 150px;
 	text-align: right;
